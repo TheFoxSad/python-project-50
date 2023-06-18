@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from hexlet_code.cli import parse_arguments
-from hexlet_code.generate import generate_gendiff
+from gendiff.cli import parse_arguments
+from gendiff.generate import generate_gendiff
 
 
 def main():
