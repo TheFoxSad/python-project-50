@@ -21,4 +21,3 @@ def generate_gendiff(file1_path, file2_path):
     dict = json.dumps(result, indent=2)
     diff = re.sub(r'[",]', '', dict)
     return diff
-
