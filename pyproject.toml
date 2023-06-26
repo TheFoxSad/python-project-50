@@ -3,9 +3,7 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["Zak <yes.its.me.zak@gmail.com>"]
-packages = [
-  { include = "gendiff" },
-]
+packages = [{ include = "gendiff" }]
 
 
 [tool.poetry.dependencies]
