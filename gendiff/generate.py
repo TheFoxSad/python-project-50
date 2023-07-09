@@ -1,11 +1,13 @@
 import json
+import yaml
 import re
+from pathlib import Path
+from .parser import parse_file
 
 
 def generate_gendiff(file1_path, file2_path):
-    with open(file1_path) as file1, open(file2_path) as file2:
-        data1 = json.load(file1)
-        data2 = json.load(file2)
+    data1 = parse_file(file1_path)
+    data2 = parse_file(file2_path)
     result = {}
     all_keys = set(list(data1.keys()) + list(data2.keys()))
     for key in sorted(all_keys):
@@ -18,6 +20,6 @@ def generate_gendiff(file1_path, file2_path):
             result[f'+ {key}'] = data2[key]
         else:
             result[f'  {key}'] = data1[key]
-    dict = json.dumps(result, indent=2)
-    diff = re.sub(r'[",]', '', dict)
+    diff = json.dumps(result, indent=2)
+    diff = re.sub(r'[",]', '', diff)
     return diff
