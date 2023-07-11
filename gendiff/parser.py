@@ -2,6 +2,7 @@ import json
 import yaml
 from pathlib import Path
 
+
 def parse_file(file_path):
     file_path = Path(file_path)
     file_suffix = file_path.suffix

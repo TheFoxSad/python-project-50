@@ -1,7 +1,5 @@
 import json
-import yaml
 import re
-from pathlib import Path
 from .parser import parse_file
 
 
